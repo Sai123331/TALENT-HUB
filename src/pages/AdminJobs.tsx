@@ -13,7 +13,7 @@ export default function AdminJobs() {
     const fetchJobs = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/jobs');
+        const response = await fetch('https://talent-hub-be.onrender.com/api/jobs');
         if (!response.ok) throw new Error('Failed to fetch jobs');
         const data = await response.json();
         setJobs(data.map((j: any) => ({

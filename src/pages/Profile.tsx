@@ -29,7 +29,7 @@ export default function Profile() {
 
   const fetchProfile = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/users/profile', {
+      const response = await fetch('https://talent-hub-be.onrender.com/api/users/profile', {
         headers: {
           'Authorization': `Bearer ${user?.token}`
         }
@@ -86,7 +86,7 @@ export default function Profile() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/profile-picture', {
+      const response = await fetch('https://talent-hub-be.onrender.com/api/users/profile-picture', {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${user?.token}`,
@@ -119,7 +119,7 @@ export default function Profile() {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/profile', {
+      const response = await fetch('https://talent-hub-be.onrender.com/api/users/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

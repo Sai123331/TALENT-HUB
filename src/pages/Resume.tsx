@@ -27,7 +27,7 @@ export default function Resume() {
     setLoading(true);
     setMessage({ type: '', text: '' });
     try {
-      const response = await fetch('http://localhost:5000/api/users/profile', {
+      const response = await fetch('https://talent-hub-be.onrender.com/api/users/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export default function Resume() {
     formData.append('resume', file);
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/resume', {
+      const response = await fetch('https://talent-hub-be.onrender.com/api/users/resume', {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${user?.token}`
@@ -101,7 +101,7 @@ export default function Resume() {
                 <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center overflow-hidden border border-indigo-50 shrink-0">
                   {user?.profilePicture ? (
                     <img
-                      src={user.profilePicture.startsWith('http') ? user.profilePicture : `http://localhost:5000${user.profilePicture}`}
+                      src={user.profilePicture.startsWith('http') ? user.profilePicture : `https://talent-hub-be.onrender.com${user.profilePicture}`}
                       alt="Profile"
                       className="w-full h-full object-cover"
                     />
@@ -193,7 +193,7 @@ export default function Resume() {
                     </div>
                     <div className="flex gap-2">
                       <a
-                        href={`http://localhost:5000${user.resume}`}
+                        href={`https://talent-hub-be.onrender.com${user.resume}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm font-medium text-indigo-600 hover:text-indigo-700 px-3 py-1.5 rounded-lg hover:bg-indigo-50 transition-colors"

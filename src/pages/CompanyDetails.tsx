@@ -16,7 +16,7 @@ export default function CompanyDetails() {
       try {
         setLoading(true);
         // 1. Fetch Company Info
-        const companyRes = await fetch(`http://localhost:5000/api/companies/${id}`);
+        const companyRes = await fetch(`https://talent-hub-be.onrender.com/api/companies/${id}`);
         if (!companyRes.ok) throw new Error('Company not found');
         const companyData = await companyRes.json();
         setCompany({
@@ -28,7 +28,7 @@ export default function CompanyDetails() {
         });
 
         // 2. Fetch Company Jobs
-        const jobsRes = await fetch(`http://localhost:5000/api/jobs/company/${id}`);
+        const jobsRes = await fetch(`https://talent-hub-be.onrender.com/api/jobs/company/${id}`);
         if (jobsRes.ok) {
             const jobsData = await jobsRes.json();
             setCompanyJobs(jobsData.map((j: any) => ({

@@ -15,7 +15,7 @@ export default function AdminCompanies() {
     const fetchCompanies = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/companies');
+        const response = await fetch('https://talent-hub-be.onrender.com/api/companies');
         if (!response.ok) throw new Error('Failed to fetch companies');
         const data = await response.json();
         setCompanies(data.map((c: any) => ({
@@ -41,7 +41,7 @@ export default function AdminCompanies() {
     
     setDeletingId(id);
     try {
-        const response = await fetch(`http://localhost:5000/api/companies/${id}`, {
+        const response = await fetch(`https://talent-hub-be.onrender.com/api/companies/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${user?.token}`

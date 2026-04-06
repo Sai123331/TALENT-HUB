@@ -40,7 +40,7 @@ export default function ApplyJob() {
     const fetchJob = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/jobs/${id}`);
+        const response = await fetch(`https://talent-hub-be.onrender.com/api/jobs/${id}`);
         if (!response.ok) throw new Error('Job not found');
         const data = await response.json();
         setJob({
@@ -102,7 +102,7 @@ export default function ApplyJob() {
     setError(null);
     
     try {
-      const response = await fetch('http://localhost:5000/api/applications/apply', {
+      const response = await fetch('https://talent-hub-be.onrender.com/api/applications/apply', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

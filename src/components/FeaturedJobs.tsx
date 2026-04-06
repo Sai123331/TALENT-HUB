@@ -13,7 +13,7 @@ export default function FeaturedJobs() {
     const fetchFeaturedJobs = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/jobs');
+        const response = await fetch('https://talent-hub-be.onrender.com/api/jobs');
         if (!response.ok) throw new Error('Failed to fetch jobs');
         const data = await response.json();
         // Just take the first 6 for featured
@@ -103,7 +103,7 @@ export default function FeaturedJobs() {
 
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
                   <div className="flex flex-wrap gap-2">
-                    {job.tags.slice(0, 2).map((tag) => (
+                    {job.tags.slice(0, 2).map((tag: string) => (
                       <span key={tag} className="px-3 py-1 bg-slate-50 text-slate-600 text-xs font-medium rounded-lg border border-slate-200">
                         {tag}
                       </span>

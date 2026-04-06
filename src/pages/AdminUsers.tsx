@@ -15,7 +15,7 @@ export default function AdminUsers() {
     const fetchUsers = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/users', {
+        const response = await fetch('https://talent-hub-be.onrender.com/api/users', {
           headers: {
             'Authorization': `Bearer ${currentUser?.token}`
           }
@@ -42,7 +42,7 @@ export default function AdminUsers() {
 
     setDeletingId(id);
     try {
-      const response = await fetch(`http://localhost:5000/api/users/${id}`, {
+      const response = await fetch(`https://talent-hub-be.onrender.com/api/users/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${currentUser?.token}`

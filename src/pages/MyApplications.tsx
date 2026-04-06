@@ -15,7 +15,7 @@ export default function MyApplications() {
       if (!user?.token) return;
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/applications/my', {
+        const response = await fetch('https://talent-hub-be.onrender.com/api/applications/my', {
           headers: {
             'Authorization': `Bearer ${user.token}`
           }
@@ -83,7 +83,7 @@ export default function MyApplications() {
                 <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center overflow-hidden border border-indigo-50">
                   {user?.profilePicture ? (
                     <img 
-                      src={user.profilePicture.startsWith('http') ? user.profilePicture : `http://localhost:5000${user.profilePicture}`} 
+                      src={user.profilePicture.startsWith('http') ? user.profilePicture : `https://talent-hub-be.onrender.com${user.profilePicture}`} 
                       alt="Profile" 
                       className="w-full h-full object-cover" 
                     />

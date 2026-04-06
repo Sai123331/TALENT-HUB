@@ -14,7 +14,7 @@ export default function Contact() {
   React.useEffect(() => {
     const fetchAdminContact = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/admin/contact');
+        const response = await fetch('https://talent-hub-be.onrender.com/api/admin/contact');
         if (response.ok) {
           const data = await response.json();
           setAdminContact(data);
@@ -39,7 +39,7 @@ export default function Contact() {
     setFormStatus({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/contacts', {
+      const response = await fetch('https://talent-hub-be.onrender.com/api/contacts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

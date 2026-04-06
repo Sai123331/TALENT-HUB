@@ -17,15 +17,15 @@ export default function AdminDashboard() {
       try {
         setLoading(true);
         // 1. Fetch Jobs
-        const jobsRes = await fetch('http://localhost:5000/api/jobs');
+        const jobsRes = await fetch('https://talent-hub-be.onrender.com/api/jobs');
         const jobsData = await jobsRes.json();
         
         // 2. Fetch Companies
-        const companiesRes = await fetch('http://localhost:5000/api/companies');
+        const companiesRes = await fetch('https://talent-hub-be.onrender.com/api/companies');
         const companiesData = await companiesRes.json();
 
         // 3. Fetch Users
-        const usersRes = await fetch('http://localhost:5000/api/users', {
+        const usersRes = await fetch('https://talent-hub-be.onrender.com/api/users', {
           headers: { 'Authorization': `Bearer ${user?.token}` }
         });
         const usersData = await usersRes.json();

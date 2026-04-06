@@ -17,11 +17,11 @@ export default function CompanyDashboard() {
       try {
         setLoading(true);
         // Fetch company jobs
-        const jobsRes = await fetch(`http://localhost:5000/api/jobs/company/${user._id}`);
+        const jobsRes = await fetch(`https://talent-hub-be.onrender.com/api/jobs/company/${user._id}`);
         const jobsData = await jobsRes.json();
 
         // Fetch company applicants
-        const appsRes = await fetch(`http://localhost:5000/api/applications/company/${user._id}`, {
+        const appsRes = await fetch(`https://talent-hub-be.onrender.com/api/applications/company/${user._id}`, {
           headers: { 'Authorization': `Bearer ${user.token}` }
         });
         const appsData = await appsRes.json();
@@ -40,7 +40,7 @@ export default function CompanyDashboard() {
   const handleStatusUpdate = async (appId: string, status: string) => {
     setUpdatingId(appId);
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/${appId}/status`, {
+      const response = await fetch(`https://talent-hub-be.onrender.com/api/applications/${appId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -10,5 +10,5 @@ export const getImageUrl = (path: string | undefined | null, type: 'user' | 'com
   }
 
   // Prepend backend URL for local paths
-  return `http://localhost:5000${path.startsWith('/') ? '' : '/'}${path}`;
+  return `https://talent-hub-be.onrender.com${path.startsWith('/') ? '' : '/'}${path}`;
 };

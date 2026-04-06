@@ -20,7 +20,7 @@ export default function ManageApplicants() {
       if (!user?._id) return;
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/applications/company/${user._id}`, {
+        const response = await fetch(`https://talent-hub-be.onrender.com/api/applications/company/${user._id}`, {
           headers: { 'Authorization': `Bearer ${user.token}` }
         });
         if (!response.ok) throw new Error('Failed to fetch applicants');
@@ -38,7 +38,7 @@ export default function ManageApplicants() {
   const handleStatusUpdate = async (appId: string, status: string) => {
     setUpdatingId(appId);
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/${appId}/status`, {
+      const response = await fetch(`https://talent-hub-be.onrender.com/api/applications/${appId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

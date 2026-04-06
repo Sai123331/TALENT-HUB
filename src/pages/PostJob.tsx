@@ -28,7 +28,7 @@ export default function PostJob() {
     if (user?.role === 'admin') {
       const fetchCompanies = async () => {
         try {
-          const res = await fetch('http://localhost:5000/api/companies');
+          const res = await fetch('https://talent-hub-be.onrender.com/api/companies');
           const data = await res.json();
           setCompanies(data);
         } catch (err) {
@@ -45,7 +45,7 @@ export default function PostJob() {
     setError('');
     
     try {
-      const response = await fetch('http://localhost:5000/api/jobs', {
+      const response = await fetch('https://talent-hub-be.onrender.com/api/jobs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

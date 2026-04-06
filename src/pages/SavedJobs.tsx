@@ -16,7 +16,7 @@ export default function SavedJobs() {
     const fetchSavedJobs = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/jobs');
+        const response = await fetch('https://talent-hub-be.onrender.com/api/jobs');
         if (!response.ok) throw new Error('Failed to fetch jobs');
         const allJobs = await response.json();
         

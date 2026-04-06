@@ -21,7 +21,7 @@ export default function JobDetails() {
     const fetchJobDetails = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/jobs/${id}`);
+        const response = await fetch(`https://talent-hub-be.onrender.com/api/jobs/${id}`);
         if (!response.ok) throw new Error('Job not found');
         const data = await response.json();
         

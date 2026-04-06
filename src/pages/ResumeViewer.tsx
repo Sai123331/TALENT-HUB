@@ -18,7 +18,7 @@ export default function ResumeViewer() {
     const fetchApplication = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/applications/company/${user?._id}`, {
+        const response = await fetch(`https://talent-hub-be.onrender.com/api/applications/company/${user?._id}`, {
           headers: { 'Authorization': `Bearer ${user?.token}` }
         });
         if (!response.ok) throw new Error('Failed to fetch application details');
@@ -38,7 +38,7 @@ export default function ResumeViewer() {
   const handleStatusUpdate = async (status: string) => {
     setUpdating(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/${id}/status`, {
+      const response = await fetch(`https://talent-hub-be.onrender.com/api/applications/${id}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ export default function ResumeViewer() {
   const resumePath = application.resume.startsWith('/uploads/') 
     ? application.resume 
     : `/uploads/resumes/${application.resume}`;
-  const resumeUrl = `http://localhost:5000${resumePath}`;
+  const resumeUrl = `https://talent-hub-be.onrender.com${resumePath}`;
   const isPdf = application.resume.toLowerCase().endsWith('.pdf');
 
   return (

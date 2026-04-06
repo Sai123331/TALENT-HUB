@@ -36,7 +36,7 @@ export default function SupportMessagesDrawer({ isOpen, onClose }: SupportMessag
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch('http://localhost:5000/api/contacts', {
+      const response = await fetch('https://talent-hub-be.onrender.com/api/contacts', {
         headers: {
           'Authorization': `Bearer ${user?.token}`
         }
@@ -58,7 +58,7 @@ export default function SupportMessagesDrawer({ isOpen, onClose }: SupportMessag
 
     setDeletingId(id);
     try {
-      const response = await fetch(`http://localhost:5000/api/contacts/${id}`, {
+      const response = await fetch(`https://talent-hub-be.onrender.com/api/contacts/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${user?.token}`
